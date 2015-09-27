@@ -122,10 +122,7 @@ void setup ( void ) {
 
   delay(10);
   
-  wifiMulti.addAP("Csiky 2.0", "mediasch");
-  wifiMulti.addAP("Csiky", "mediasch");
-  wifiMulti.addAP("UPC1671076", "TNBAZBHX");
-  wifiMulti.addAP("handy", "        ");
+  wifiMulti.addAP("...AP", "..AP-PW");
 	Serial.println ( "" );
 
   digitalWrite(led, 1);

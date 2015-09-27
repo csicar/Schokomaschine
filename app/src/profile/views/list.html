@@ -1,0 +1,11 @@
+<div ng-controller="ProfileController">
+<md-card class="md-whiteframe-z4">
+	<md-card-content>
+	  <h2 class="md-title">Profile</h2>
+	</md-card-content>
+</md-card>
+<md-card ng-repeat="profile in profiles">
+	<md-card-content>
+	  <h2 class="md-title"><a href="#/profile/view/{{profile.name}}">{{profile.name}}</a></h2>
+	</md-card-content>
+</md-card>

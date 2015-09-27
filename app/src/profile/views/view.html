@@ -1,0 +1,74 @@
+<div  ng-controller="ProfileController">
+	<md-card class="md-whiteframe-z4">
+		<md-card-content>
+		  <h2 class="md-title" layout="row" layout-align="center center">
+		  	<div>Profile</div>
+		  	<md-input-container>
+		      <label>Name</label>
+		      <input ng-model="profile.name" type="text">
+		    </md-input-container>
+		    <div layout-align="end">
+		    	<md-button class="md-fab" aria-label="run" ng-click="run()">
+            		<span style="font-size: 1.5em;line-height: 2.8em;padding-left: 4px;">&#9658;</span>
+        		</md-button>
+		    </div>
+		  </h2>
+		</md-card-content>
+	</md-card>
+	</br>
+	<md-card md-swipe-right="remove($index)" ng-repeat="step in profile.steps" ng-class="{'md-whiteframe-z5': isActive($index), 'active': isActive($index)}">
+		<div layout="row" layout-align="end start">
+		<md-button class="md-fab md-mini md-warn" ng-click="remove($index)">
+            ✕
+        </md-button>
+        <md-button class="md-fab md-mini md-primary" ng-click="gotoStep($index)">
+            ❯
+        </md-button>
+    </div>
+		<md-card-content>
+		  <div layout="column"  class="md-extra-padding">
+		  	<div flex layout>
+			  	<div flex="10" layout layout-align="center center">
+		        	<span class="md-body-1">{{step.type}} Temp {{step.temp}}</span>
+		      	</div>
+			  	<md-slider aria-label="temp" flex class="md-primary" ng-model="step.temp" step="0.25" min="20" max="60">
+		    	</md-slider>
+		    </div>
+	      	
+	      	<div flex layout="column" layout-align="center" ng-if="step.type=='keep'">
+	      		<div flex>bis:</div>
+	      		<div flex layout="row">
+		      		<md-radio-group flex="75" ng-model="step.end" layout="row">
+				      <md-radio-button flex="66" value="button" class="md-primary">Knopf</md-radio-button>
+				      <md-radio-button flex="33" value="time">Zeit</md-radio-button>
+		    		</md-radio-group>
+				    <md-input-container flex="25">
+						<input ng-model="step.endTime" aria-label="end time">
+					</md-input-container>
+				</div>
+			</div>
+		  </div>
+		</md-card-content>
+	</md-card>
+	<md-card>
+		<md-card-content>
+		  <div layout>
+		  	<md-button flex class="md-raised" ng-click="create('reach')">Erreiche Temperatur</md-button>
+		  	<md-button flex class="md-raised" ng-click="create('keep')">Behalte Temperatur</md-button>
+		  </div>
+		</md-card-content>
+		<div class="md-actions" layout="row" layout-align="end center">
+		  <md-button href="#/profile/create">cancel</md-button>
+		  <md-button ng-click="save()">speichern</md-button>
+		</div>
+		{{steps}}
+	</md-card>
+
+	<style>
+	.md-extra-padding {
+		margin-top: 30px;
+	}
+	md-card.active {
+		border: 3px solid grey;
+	}
+	</style>

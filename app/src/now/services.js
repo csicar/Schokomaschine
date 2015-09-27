@@ -1,6 +1,6 @@
 angular.module('now', ['LocalStorageModule', 'camera'])
 .factory('nowCom', function($http, $timeout) {
-  var addr = 'http://schokomaschine.local'
+  var addr = 'http://ESP_F3C281.lan'
 	var data = {commands: []};
 	var cbs = {};
   var lastContact;

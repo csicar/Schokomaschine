@@ -6,7 +6,7 @@ angular.module('profile', ['LocalStorageModule', 'camera', 'now'])
 })
 .factory('Profile', function(localStorageService, $http, $q){
 	var profiles = [];
-	var addr = 'http://192.168.1.183';
+	var addr = 'http://192.168.4.1';
 	var self = function Profile(obj){
 		obj = obj || {}
 		obj.steps = obj.steps || [];

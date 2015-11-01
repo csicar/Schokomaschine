@@ -1,0 +1,21 @@
+CACHE MANIFEST
+index.html
+http://fonts.googleapis.com/css?family=Roboto:400,500,700,400italic
+bower_components/angular-material/angular-material.css
+assets/app.css
+bower_components/angular/angular.js
+bower_components/angular-animate/angular-animate.js
+bower_components/angular-aria/angular-aria.js
+bower_components/angular-material/angular-material.js
+bower_components/angular-route/angular-route.js
+bower_components/angular-local-storage/dist/angular-local-storage.js
+bower_components/webcamjs/webcam.js
+bower_components/ng-camera/dist/ng-camera.js
+bower_components/Chart.js/Chart.js
+src/profile/services.js
+src/profile/controller.js
+src/now/services.js
+src/now/controller.js
+src/home/services.js
+src/home/controller.js
+
